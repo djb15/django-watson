@@ -371,7 +371,7 @@ class MySQLSearchBackend(SearchBackend):
                 )
             )
         # Change the storage engine to MyISAM.
-        cursor.execute("ALTER TABLE watson_searchentry ENGINE = MyISAM")
+        cursor.execute("ALTER TABLE watson_searchentry ENGINE = InnoDB")
         # Add the full text indexes.
         cursor.execute("CREATE FULLTEXT INDEX watson_searchentry_fulltext "
                        "ON watson_searchentry (title, description, content)")
